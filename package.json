@@ -1,0 +1,6 @@
+{
+    "name": "chatgpt_slackbot",
+    "private": true,
+    "dependencies": {"@slack/web-api": "7.2.0", "openai": "4.52.0"},
+    "devDependencies": {"@types/node": "20.14.6", "typescript": "5.4.5"} 
+}
