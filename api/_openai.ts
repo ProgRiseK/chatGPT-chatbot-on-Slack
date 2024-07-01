@@ -1,5 +1,5 @@
-import type { ChatCompletionMessageParam} from 'openai/src/resources/index.js'
-import type {ConversationsRepliesResponse} from "@slack/web-api"
+import type { ChatCompletionMessageParam } from 'openai/src/resources/index.js'
+import type { ConversationsRepliesResponse } from "@slack/web-api"
 import OpenAI from 'openai'
 
 const openai = new OpenAI()

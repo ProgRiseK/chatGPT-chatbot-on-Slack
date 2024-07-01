@@ -1,7 +1,7 @@
-import { sendChatGPTresponse } from "./chat"
+import { sendChatGPTresponse } from "./_chat"
 import crypto from "crypto"
 
-export const config = {max_duration: 30,}
+export const config = {max_duration: 30}
 
 async function isValidSlackRequest(request: Request, body: any) {
     const signing_secret = process.env.SLACK_SIGNING_SECRET!
