@@ -2,12 +2,6 @@
     "name": "chatgpt_slackbot",
     "private": true,
     "version": "0.1.0",
-    "dependencies": {
-        "@slack/web-api": "7.2.0", 
-        "openai": "4.52.2"
-    },
-    "devDependencies": {
-        "@types/node": "20.14.9", 
-        "typescript": "5.5.3"
-    } 
+    "dependencies": {"@slack/web-api": "7.2.0", "openai": "4.52.2"},
+    "devDependencies": {"@types/node": "20.14.9", "typescript": "5.5.3"} 
 }
