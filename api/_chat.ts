@@ -1,5 +1,5 @@
 import { WebClient } from "@slack/web-api"
-import { generatePrompt, getChatGPTResponse } from "./openai"
+import { generatePrompt, getChatGPTResponse } from "./_openai"
 import { stringify } from "querystring"
 
 const slack = new WebClient(process.env.SLack_BOT_TOKEN)
