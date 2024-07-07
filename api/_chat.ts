@@ -6,17 +6,17 @@ const slack = new WebClient(process.env.SLACK_BOT_TOKEN)
 
 type Event = {
     channel: string
-    timestamp: string
-    thread_timestamp?: string
+    ts: string
+    thread_ts?: string
 }
 
 export async function sendChatGPTresponse(event: Event) {
-    const {channel, timestamp, thread_timestamp} = event
+    const {channel, ts, thread_ts} = event
 
     try {
         const thread = await slack.conversations.replies({
             channel,
-            ts: thread_timestamp ?? timestamp,
+            ts: thread_ts ?? ts,
             inclusive: true
         })
 
@@ -25,14 +25,14 @@ export async function sendChatGPTresponse(event: Event) {
 
         await slack.chat.postMessage({
             channel,
-            thread_ts: timestamp,
+            thread_ts: ts,
             text: `${responseFromChatGPT.choices[0].message.content}`,
         })
     } catch(error) {
         if(error instanceof Error){
             await slack.chat.postMessage({
                 channel,
-                thread_ts: timestamp,
+                thread_ts: ts,
                 text: `<@${process.env.SLACK_ADMIN_NUMBER_ID}> Error: ${error.message}`,
 
             })
