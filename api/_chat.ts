@@ -2,7 +2,7 @@ import { WebClient } from "@slack/web-api"
 import { generatePrompt, getChatGPTResponse } from "./_openai"
 import { stringify } from "querystring"
 
-const slack = new WebClient(process.env.SLack_BOT_TOKEN)
+const slack = new WebClient(process.env.SLACK_BOT_TOKEN)
 
 type Event = {
     channel: string
